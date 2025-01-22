@@ -11,7 +11,7 @@ type Stack struct {
 	size     int
 }
 
-func (st *Stack) isEmpty() bool {
+func (st *Stack) IsEmpty() bool {
 	if st.top == -1 {
 		return true
 	}
@@ -22,7 +22,7 @@ func (st *Stack) isFull() bool {
 	return st.top >= st.size
 }
 
-func New(size int) *Stack {
+func NewStack(size int) *Stack {
 	elements := make([]int, size)
 	for i := range elements {
 		elements[i] = -1
@@ -45,7 +45,7 @@ func (st *Stack) Push(x int) error {
 }
 
 func (st *Stack) Pop() error {
-	if st.isEmpty() == true {
+	if st.IsEmpty() == true {
 		return fmt.Errorf("stack is empty")
 	}
 
@@ -55,7 +55,7 @@ func (st *Stack) Pop() error {
 }
 
 func (st *Stack) Peek() (int, error) {
-	if st.isEmpty() == true {
+	if st.IsEmpty() == true {
 		return 0, fmt.Errorf("stack is empty")
 	}
 
