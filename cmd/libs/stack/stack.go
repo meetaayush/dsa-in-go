@@ -2,7 +2,6 @@ package libs
 
 import (
 	"errors"
-	"fmt"
 )
 
 type Stack struct {
@@ -46,7 +45,7 @@ func (st *Stack) Push(x int) error {
 
 func (st *Stack) Pop() error {
 	if st.IsEmpty() == true {
-		return fmt.Errorf("stack is empty")
+		return errors.New("stack is empty")
 	}
 
 	st.top = st.top - 1
@@ -56,7 +55,7 @@ func (st *Stack) Pop() error {
 
 func (st *Stack) Peek() (int, error) {
 	if st.IsEmpty() == true {
-		return 0, fmt.Errorf("stack is empty")
+		return 0, errors.New("stack is empty")
 	}
 
 	return st.elements[st.top], nil
