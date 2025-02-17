@@ -1,10 +1,24 @@
-package main
+package libs
 
 import "fmt"
 
 type Node struct {
 	Val  int
 	Next *Node
+}
+
+func (n *Node) ParseToArray() []int {
+	arr := []int{}
+	if n == nil {
+		return arr
+	}
+	curr := n
+	for curr != nil {
+		arr = append(arr, curr.Val)
+		curr = curr.Next
+	}
+
+	return arr
 }
 
 type LinkedList struct {
@@ -172,7 +186,7 @@ func (l *LinkedList) DeleteNodeWithValueX(x int) *Node {
 	return nil
 }
 
-func (l *LinkedList) print() {
+func (l *LinkedList) Print() {
 	curr := l.Head
 
 	for curr != nil {
@@ -182,20 +196,20 @@ func (l *LinkedList) print() {
 	fmt.Println("NULL")
 }
 
-func main() {
-	list := LinkedList{}
-	Node1 := &Node{Val: 10}
-	Node2 := &Node{Val: 20}
-	Node3 := &Node{Val: 30}
-	Node4 := &Node{Val: 40}
+// func main() {
+// 	list := LinkedList{}
+// 	Node1 := &Node{Val: 10}
+// 	Node2 := &Node{Val: 20}
+// 	Node3 := &Node{Val: 30}
+// 	Node4 := &Node{Val: 40}
 
-	list.Prepend(Node1)
-	list.Prepend(Node2)
-	list.Prepend(Node3)
-	list.Append(Node4)
+// 	list.Prepend(Node1)
+// 	list.Prepend(Node2)
+// 	list.Prepend(Node3)
+// 	list.Append(Node4)
 
-	list.print()
+// 	list.print()
 
-	list.InsertBeforeX(30, 15)
-	list.print()
-}
+// 	list.InsertBeforeX(30, 15)
+// 	list.print()
+// }
