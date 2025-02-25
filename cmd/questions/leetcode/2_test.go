@@ -7,7 +7,7 @@ import (
 	libs "github.com/meetaayush/dsa-in-go/cmd/libs/linkedList"
 )
 
-func TestAddTwoNumbers(t *testing.T) {
+func Test2(t *testing.T) {
 	type testCase struct {
 		num1   []int
 		num2   []int
