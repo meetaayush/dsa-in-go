@@ -7,15 +7,17 @@ import (
 	libs "github.com/meetaayush/dsa-in-go/cmd/libs/linkedList"
 )
 
-func Test328(t *testing.T) {
+func TestAddOneToNumberInLL(t *testing.T) {
 	type testCase struct {
 		num    []int
 		result []int
 	}
 
 	cases := []testCase{
-		{[]int{1, 2, 3, 4, 5}, []int{1, 3, 5, 2, 4}},
-		{[]int{2, 1, 3, 5, 6, 4, 7}, []int{2, 3, 6, 7, 1, 5, 4}},
+		{[]int{1, 2, 3, 4, 5}, []int{1, 2, 3, 4, 6}},
+		{[]int{2, 1, 3, 5, 6, 9, 9}, []int{2, 1, 3, 5, 7, 0, 0}},
+		{[]int{9}, []int{1, 0}},
+		{[]int{1}, []int{2}},
 	}
 	for _, val := range cases {
 		list1 := &libs.LinkedList{}
@@ -24,7 +26,7 @@ func Test328(t *testing.T) {
 			tempNode.Val = numVal1
 			list1.Append(tempNode)
 		}
-		res := oddEvenList(list1.Head)
+		res := addOneToNumberInLL(list1.Head)
 		expectedRes := res.ParseToArray()
 
 		if !reflect.DeepEqual(expectedRes, val.result) {

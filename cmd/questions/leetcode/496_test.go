@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestNextGreaterElement(t *testing.T) {
+func Test496(t *testing.T) {
 	type TestCase struct {
 		nums1    []int
 		nums2    []int

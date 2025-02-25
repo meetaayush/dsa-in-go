@@ -7,7 +7,7 @@ import (
 	libs "github.com/meetaayush/dsa-in-go/cmd/libs/linkedList"
 )
 
-func TestDeleteNodesFromLLPresentInArr(t *testing.T) {
+func Test3217(t *testing.T) {
 	type testCase struct {
 		list   []int
 		nums   []int

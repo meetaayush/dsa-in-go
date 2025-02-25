@@ -7,15 +7,17 @@ import (
 	libs "github.com/meetaayush/dsa-in-go/cmd/libs/linkedList"
 )
 
-func Test328(t *testing.T) {
+func Test234(t *testing.T) {
 	type testCase struct {
 		num    []int
-		result []int
+		result bool
 	}
 
 	cases := []testCase{
-		{[]int{1, 2, 3, 4, 5}, []int{1, 3, 5, 2, 4}},
-		{[]int{2, 1, 3, 5, 6, 4, 7}, []int{2, 3, 6, 7, 1, 5, 4}},
+		{[]int{1, 2, 2, 1}, true},
+		{[]int{2, 1}, false},
+		{[]int{9}, true},
+		{[]int{}, false},
 	}
 	for _, val := range cases {
 		list1 := &libs.LinkedList{}
@@ -24,11 +26,10 @@ func Test328(t *testing.T) {
 			tempNode.Val = numVal1
 			list1.Append(tempNode)
 		}
-		res := oddEvenList(list1.Head)
-		expectedRes := res.ParseToArray()
+		res := isPalindromeList(list1.Head)
 
-		if !reflect.DeepEqual(expectedRes, val.result) {
-			t.Errorf("expected %v, got %v", val.result, expectedRes)
+		if !reflect.DeepEqual(res, val.result) {
+			t.Errorf("expected %v, got %v", val.result, res)
 		}
 	}
 }

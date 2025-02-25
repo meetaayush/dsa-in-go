@@ -7,7 +7,7 @@ import (
 	libs "github.com/meetaayush/dsa-in-go/cmd/libs/linkedList"
 )
 
-func TestReverseLL(t *testing.T) {
+func Test206(t *testing.T) {
 	type testCase struct {
 		list   []int
 		result []int

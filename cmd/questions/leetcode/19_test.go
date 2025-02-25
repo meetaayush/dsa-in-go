@@ -7,7 +7,7 @@ import (
 	libs "github.com/meetaayush/dsa-in-go/cmd/libs/linkedList"
 )
 
-func TestRemoveNthFromEndOfLL(t *testing.T) {
+func Test19(t *testing.T) {
 	type testCase struct {
 		list   []int
 		k      int
