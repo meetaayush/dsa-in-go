@@ -21,6 +21,25 @@ func (n *Node) ParseToArray() []int {
 	return arr
 }
 
+func (head *Node) Reverse() *Node {
+	if head == nil {
+		return head
+	}
+
+	dummyNode := &Node{}
+	prev, curr := dummyNode, head
+	prev = nil
+
+	for curr != nil {
+		next := curr.Next
+		curr.Next = prev
+		prev = curr
+		curr = next
+	}
+
+	return prev
+}
+
 type LinkedList struct {
 	Head   *Node
 	Length int
